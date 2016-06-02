@@ -172,9 +172,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountsController.cs" />
+    <Compile Include="Controllers\PostsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infastructure\AuthorizationRepository.cs" />
+    <Compile Include="Infastructure\ChirperAuthorizationServerProvider.cs" />
     <Compile Include="Infastructure\ChirperDataContext.cs" />
     <Compile Include="Migrations\201606012025103_InitialCreate.cs" />
     <Compile Include="Migrations\201606012025103_InitialCreate.Designer.cs">
@@ -186,6 +190,7 @@
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\RegistrationModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -201,7 +206,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201606012025103_InitialCreate.resx">

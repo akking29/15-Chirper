@@ -43,5 +43,6 @@ namespace Chirper.Api.Infastructure
             base.OnModelCreating(modelBuilder);
 
         }
+
     }
 }
