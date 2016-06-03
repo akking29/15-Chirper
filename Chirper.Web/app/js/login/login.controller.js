@@ -1,26 +1,26 @@
 (function() {
-        'use strict';
+    'use strict';
 
-        angular
-            .module('app')
-            .controller('LoginController', LoginController);
+    angular
+        .module('app')
+        .controller('LoginController', LoginController);
 
-        LoginController.$inject = ['authService, $state, toastr)];
+    LoginController.$inject = ['authService', '$state', 'toastr'];
+    
+    function LoginController(authService, $state, toastr) {
+        var vm = this;
 
-            function LoginController(authService, $state, toastr) {
-                var vm = this;
+        vm.login = function() {
+            authService.login(vm.username, vm.password)
+                .then(
+                    function(response) {
+                        $state.go('posts');
+                    },
+                    function(message) {
+                        toastr.warning(message);
+                    }
+                );
+        };
 
-                vm.login = function() {
-                    authService.login(vm.username, vm.password)
-                        .then(
-                            function(response) {
-                                $state.go('posts');
-                            },
-                            function(message) {
-                                toastr.warning(message);
-                            }
-                        );
-                };
-
-            }
-        })();
+    }
+})();

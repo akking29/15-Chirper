@@ -9,7 +9,7 @@
 
     function authService($http, $q, localStorageService, $location, apiUrl) {
         var state = {
-            isLoggedIn: false;
+            isLoggedIn: false
         };
         var service = {
             state: state,

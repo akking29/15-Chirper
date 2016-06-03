@@ -6,11 +6,11 @@ var gulp = require('gulp'),
    inject = require('gulp-inject'),        // inject app dependency includes on index.html
    open = require('gulp-open');            // open a URL in the browser
 
-var jsSources = ['app/js/*.js'],
+var jsSources = ['app/js/**/*.js'],
    cssSources = ['app/styles/*.css'],
-   htmlSources = ['*.html'];
+   htmlSources = ['app/*.html'];
 
-var paths = ['./bower_components/','./app/*.js','./app/**/*.css'];
+var paths = ['./bower_components','./bower_components/bootstrap/**/**/*.css','./app/js/**/*.js','./app/css/*.css'];
 
 gulp.task('connect', function() {
    connect.server({
