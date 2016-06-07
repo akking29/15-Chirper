@@ -132,7 +132,7 @@ C:\Dev\GitHub\15-Chirper\Chirper\Chirper.Api\bin\System.Net.Http.Formatting.xml
 C:\Dev\GitHub\15-Chirper\Chirper\Chirper.Api\bin\System.Web.Http.xml
 C:\Dev\GitHub\15-Chirper\Chirper\Chirper.Api\bin\System.Web.Http.WebHost.xml
 C:\Dev\GitHub\15-Chirper\Chirper\Chirper.Api\obj\Debug\Chirper.Api.csprojResolveAssemblyReference.cache
-C:\Dev\GitHub\15-Chirper\Chirper\Chirper.Api\obj\Debug\Chirper.Api.Migrations.InitialCreate.resources
-C:\Dev\GitHub\15-Chirper\Chirper\Chirper.Api\obj\Debug\Chirper.Api.csproj.GenerateResource.Cache
 C:\Dev\GitHub\15-Chirper\Chirper\Chirper.Api\obj\Debug\Chirper.Api.dll
 C:\Dev\GitHub\15-Chirper\Chirper\Chirper.Api\obj\Debug\Chirper.Api.pdb
+C:\Dev\Github\15-Chirper\Chirper\Chirper.Api\obj\Debug\Chirper.Api.Migrations.InitialCreate.resources
+C:\Dev\Github\15-Chirper\Chirper\Chirper.Api\obj\Debug\Chirper.API.csproj.GenerateResource.Cache

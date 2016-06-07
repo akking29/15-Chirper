@@ -13,7 +13,7 @@
         };
         var service = {
             state: state,
-            register:register,
+            register: register,
             login: login,
             logout: logout,
             init: init

@@ -7,8 +7,8 @@ var gulp = require('gulp'),
    open = require('gulp-open');            // open a URL in the browser
 
 var jsSources = ['app/js/**/*.js'],
-   cssSources = ['app/styles/*.css'],
-   htmlSources = ['app/*.html'];
+   cssSources = ['app/style/*.css'],
+   htmlSources = ['app/js/templates/*.html'];
 
 var paths = ['./bower_components','./bower_components/bootstrap/**/**/*.css','./app/js/**/*.js','./app/css/*.css'];
 

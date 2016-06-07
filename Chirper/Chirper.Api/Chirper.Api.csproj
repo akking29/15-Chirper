@@ -180,9 +180,9 @@
     <Compile Include="Infastructure\AuthorizationRepository.cs" />
     <Compile Include="Infastructure\ChirperAuthorizationServerProvider.cs" />
     <Compile Include="Infastructure\ChirperDataContext.cs" />
-    <Compile Include="Migrations\201606012025103_InitialCreate.cs" />
-    <Compile Include="Migrations\201606012025103_InitialCreate.Designer.cs">
-      <DependentUpon>201606012025103_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201606070123122_InitialCreate.cs" />
+    <Compile Include="Migrations\201606070123122_InitialCreate.Designer.cs">
+      <DependentUpon>201606070123122_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ChirperUser.cs" />
@@ -208,8 +208,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201606012025103_InitialCreate.resx">
-      <DependentUpon>201606012025103_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201606070123122_InitialCreate.resx">
+      <DependentUpon>201606070123122_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

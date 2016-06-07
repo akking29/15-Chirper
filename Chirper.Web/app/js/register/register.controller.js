@@ -20,7 +20,7 @@
                         $state.go('login');
                     },
                     function(error){
-                    	toastr.error(error);
+                    	toastr.error(error + 'shit');
                     }
                 );
         }
