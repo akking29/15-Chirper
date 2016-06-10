@@ -7,7 +7,8 @@
 	      'LocalStorageModule',
 	      'toastr'
 	  ])
-	  .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
+	  .config(['$stateProvider', '$urlRouterProvider', '$httpProvider', function($stateProvider, $urlRouterProvider, $httpProvider){
+	  		$httpProvider.interceptors.push('authInterceptor');
 	  		$urlRouterProvider.otherwise('login');
 
 	  		$stateProvider.state('register', {url: '/register', templateUrl: 'app/js/templates/register.html', controller: 'RegisterController as register'})

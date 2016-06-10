@@ -5,7 +5,7 @@
         .module('app')
         .factory('authInterceptor', authInterceptor);
 
-    authInterceptor.$inject = ['$', '$location', 'localStorageService'];
+    authInterceptor.$inject = ['$q', '$location', 'localStorageService'];
 
     function authInterceptor($q, $location, localStorageService) {
         var service = {
@@ -24,9 +24,10 @@
             config.headers = config.headers || {};
 
             var authData = localStorageService.get('authorizationData');
+            console.log(authData);
 
             if (authData) {
-                config.headers.Authorization = 'Bearer' + authData.access_token;
+                config.headers.Authorization = 'Bearer ' + authData.access_token;
             }
 
             return config;

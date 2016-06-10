@@ -5,17 +5,15 @@
 	  .module('app')
 	  .factory('postsService', postsService);
 
-	postsService.$inject = ['$http', '$q', '$log', 'apiUrl'];
+	postsService.$inject = ['$http', '$q', '$log','toastr','$location','localStorageService', 'apiUrl'];
 
-	function postsService($http, $q, $log, apiUrl) {
+	function postsService($http, $q, $log, toastr, $location, localStorageService, apiUrl) {
 
 		var service = {
 
 			getChirps: getChirps,
-			postChirps: postChirps,
-			deleteChirps: deleteChirps,
-			editChirps: editChirps
-
+			postChirp: postChirp
+			
 		};
 
 		return service;
@@ -25,16 +23,16 @@
 			var defer = $q.defer();
 			$http({
 				method:'GET',
-				url: apiUrl + '/posts'
+				url: apiUrl + 'posts'
 			})
 			.then(
                    function(response) {
                        if (typeof response.data === 'object') {
                            defer.resolve(response);
-                           toastr.success('We have stuff to do!');
+                           toastr.success('Chirps!');
                        } else {
                            defer.reject(response);
-                           toastr.warning('no top spots found <br/>' + response.config.url);
+                           toastr.warning('no chirps :( <br/>' + response.config.url);
                        }
                    },
                    //failure
@@ -48,6 +46,32 @@
 
        
 		}
+
+		function postChirp(chirp){
+			var defer = $q.defer();
+			$http({
+				method:'POST',
+				url: apiUrl + 'posts',
+				data: chirp
+			})
+			.then(
+				function(response){
+					if(typeof response.data === 'object'){
+						defer.resolve(response);
+					} else {
+						defer.reject(response);
+						toastr.warning('no chirp');
+					}
+					console.log(chirp);
+				},
+				function(error){
+					defer.reject(error);
+					$log.error(error);
+					toastr.error('error: ' + error.data.exceptionMessage + '</br>status: ' + error.statusText);
+				});
+			return defer.promise;
+				
+		};
 	}
 
 })();

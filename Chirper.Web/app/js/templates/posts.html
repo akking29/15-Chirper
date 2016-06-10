@@ -1,58 +1,57 @@
 </br>
 <div class='container text-center'>
-<body >
-    <div class='container text-center'>
-        <div class='row'>
-            <div class='col-xs-12 col-sm-12 col-md-12'>
-                <form name='taskList' role='form'>
-                    <div class='panel panel-info'>
-                        <div class='panel-heading'>
-                            <h1 class='panel-title'>Chirp!</h1>
-                        </div>
-                        <div class='panel-body'>
-                            <div class='form-group'>
-                                <label for='taskText'> </label>
-                                <input type='text' class='form-control' ng-model='newTask.text' />
+
+    <body>
+        <div class='container text-center'>
+            <div class='row'>
+                <div class='col-xs-12 col-sm-12 col-md-12'>
+                    <form name='taskList' role='form'>
+                        <div class='panel panel-info'>
+                            <div class='panel-heading'>
+                                <h1 class='panel-title'>Chirp!</h1>
+                            </div>
+                            <div class='panel-body'>
+                                <label for='chirpText'> Chirp somethin' </label>
+                                <input type='text' class='form-control' ng-model='newChirp.text' />
+                            </div>
+                            <div class='panel-footer'>
+                                <button class='btn btn-primary btn-block' ng-click='addChirp()'>Chirp it!</button>
                             </div>
                         </div>
-                        <div class='panel-footer'>
-                            <button class='btn btn-primary btn-block' ng-click='addTask(newTask)'>Chirp it!</button>
-                        </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
+            </div>
+            <div class='col-xs-12 col-sm-12 col-md-6'>
+                </br>
+                <div class='container'>
+                    <table class='table col-xs-12 col-sm-12 col-md-6'>
+                        <tbody>
+                            <tr ng-repeat='task in tasks | orderBy:predicate' ng-class='getTask(task)'>
+                                <td>
+                                    <button class="btn btn-default" type="button" ng-click='deleteTask(task.toDoTaskId, tasks.indexOf(task))'>Delete</button>
+                                    <span ng-click="editing = true" class='tasks'>{{task.text}} </span>
+                                    <form ng-show="editing" ng-submit="editing = false">
+                                        <label for='taskText'> Text </label>
+                                        <input type='text' class='form-control' ng-model='task.text' />
+                                        <label for='taskPriority'>Priority</label>
+                                        <select id='taskPriority' class='form-control' ng-model='task.priority'>
+                                            <option value='1'>High</option>
+                                            <option value='2'>Medium</option>
+                                            <option value='3'>Low</option>
+                                        </select>
+                                        <br/>
+                                        <button class="btn" type="submit" ng-click='editTask(task)'>Save</button>
+                                        <button class="btn" ng-click='editing = false'>Cancel</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-        <div class='col-xs-12 col-sm-12 col-md-6'>
-            </br>
-            <div class='container'>
-                <table class='table col-xs-12 col-sm-12 col-md-6'>
-                    <tbody>
-                        <tr ng-repeat='task in tasks | orderBy:predicate' ng-class='getTask(task)'>
-                            <td>
-                                <button class="btn btn-default" type="button" ng-click='deleteTask(task.toDoTaskId, tasks.indexOf(task))'>Delete</button>
-                                <span ng-click="editing = true" class='tasks'>{{task.text}} </span>
-                                <form ng-show="editing" ng-submit="editing = false">
-                                    <label for='taskText'> Text </label>
-                                    <input type='text' class='form-control' ng-model='task.text' />
-                                    <label for='taskPriority'>Priority</label>
-                                    <select id='taskPriority' class='form-control' ng-model='task.priority'>
-                                        <option value='1'>High</option>
-                                        <option value='2'>Medium</option>
-                                        <option value='3'>Low</option>
-                                    </select>
-                                    <br/>
-                                    <button class="btn" type="submit" ng-click='editTask(task)'>Save</button>
-                                    <button class="btn" ng-click='editing = false'>Cancel</button>
-                                </form>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-    </div>
-    </div>
-    </div>
+</div>
+</div>
+</div>
 </body>
 </div>

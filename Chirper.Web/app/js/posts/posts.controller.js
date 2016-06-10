@@ -15,5 +15,10 @@
 				console.log(response.data);
 			});
 			
+		vm.addChirp = postsService.postChirp().then(
+		function(response){
+			toastr.success('"' + response.data.text + '" chirped!')
+
+		})	
 	}
 })();
